@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>  
+<title>COVID MONITOR</title>
+<meta name="description" content="Monitoramento da COVID-19 no Brasil via Open BigData. Desenvolvido para o Desafio ENAP" />  
+<meta name="keywords" content="Covid, Covid-19, Corona, Brasil" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+  </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">Fechar</a> 
+  <a href="/agrotoxicos.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Posição de Contágio</a> 
+  <a href="/commodities.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Mobilidade Comunitária</a>
+  <a href="/corporacoes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Interesse Coletivo</a> 
+  
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-black w3-xlarge w3-padding-16"> 
+  <span class="w3-left w3-padding"><b>C O V I D</b> M O N I T O R</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-black" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="/img/1atrazina.png" style="width:100%" onclick= "window.location.href = '/agrotoxicos/atrazina.html';" alt="Atrazina">
+      <img src="/img/5capital.png" style="width:100%" onclick="window.location.href = '/corporacoes/3gcapital.html';" alt="3g capital">
+      <img src="/img/9paraquat.png" style="width:100%" onclick="window.location.href = '/agrotoxicos/paraquat.html';" alt="paraquat">
+   </div>
+    
+   <div class="w3-quarter">
+      <img src="/img/2dupont.png" style="width:100%" onclick="window.location.href = '/corporacoes/dupont.html';" alt="dupont">
+      <img src="/img/6monsanto.png" style="width:100%" onclick="window.location.href = '/corporacoes/monsanto.html';" alt="monsanto">
+      <img src="/img/10acucar.png" style="width:100%" onclick="window.location.href = '/commodities/acucar.html';" alt="açucar">
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="/img/3milho.png" style="width:100%" onclick="window.location.href = '/commodities/milho.html';" alt="milho">
+      <img src="/img/7borax.png" style="width:100%" onclick="window.location.href = '/agrotoxicos/borax.html';" alt="borax">
+      <img src="/img/11glifosato.png" style="width:100%" onclick="window.location.href = '/agrotoxicos/glifosato.html';" alt="glifosato">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="/img/4soja.png" style="width:100%" onclick="window.location.href = '/commodities/soja.html';" alt="soja">
+      <img src="/img/8algodao.png" style="width:100%" onclick="window.location.href = '/commodities/algodao.html';" alt="algodão">
+      <img src="/img/12bayer.png" style="width:100%" onclick="window.location.href = '/corporacoes/bayer.html';" alt="bayer">
+    </div>
+  </div>
+
+  
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  
+
+  <footer class="w3-container w3-padding-64 w3-center w3-black w3-xxxlarge">
+  <a href="http://bit.ly/insta_agromonitor" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
+  <a href="http://bit.ly/fb_agromonitor" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&nbsp;&nbsp;
+  <a href="http://bit.ly/twitter_agromonitor" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <p class="w3-medium"><b>COVID</b> M O N I T O R </p>
+</footer>
+  
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+  
+
+
+</body>
+</html>
