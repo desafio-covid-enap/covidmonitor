@@ -1,20 +1,54 @@
 <html>
 <head>
-This is the head of your page.
-<title>Example HTML page</title>
+xoxo
+<title>nono</title>
+  
+  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true"
+                type="text/javascript" charset="UTF-8" data-domain-script="b286b1e1-23c0-48c5-9ed8-6f747ec441a0"></script>
+    <script type="text/javascript">
+        var originalGroupsHash;
+    
+        function defineGAEvent(selector, eventAction) {
+            var element = document.querySelector(selector);
+            if (element) {
+                element.addEventListener('click', function() {
+                    sendUserEvent("ConsentBar", eventAction, null);
+                });
+            }
+        }
+    
+        function OptanonWrapper() {
+            defineGAEvent('#onetrust-accept-btn-handler', 'Agree');
+            defineGAEvent('#onetrust-pc-btn-handler', 'MoreOptions');
+            if (!originalGroupsHash) {
+                var optanonGroups = OptanonActiveGroups;
+                originalGroupsHash = optanonGroups.split(",").sort().join("");
+            }
+            Optanon.OnConsentChanged(function (value) {
+                if (!value.detail) {
+                    return;
+                }
+                var updatedGroupsHash = value.detail.filter(function (val) {
+                    return val.charAt(0) === "C";
+                }).sort().join("");
+                if (updatedGroupsHash !== originalGroupsHash) {
+                    document.location.reload();
+                }
+            });
+        }
+    </script>
+  
+  
+  
 </head>
 <body>
-<script>
-  (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      js = d.createElement(s); js.id = id;
-      js.src = "https://widgets.moovit.com/wtp/pt";
-      fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'moovit-jsw'))
-</script>
-<div class="mv-wtp">
-   data-metro="121"
-   data-lang="pt"
+<div class="content-wrapper">
+    <iframe class="data-studio-iframe" width="100%"
+            src="https://datastudio.google.com/embed/reporting/c13571f2-498e-46d3-866d-93d568dbdd2d/page/mTs9"
+            frameborder="0" style="border:0" allowfullscreen>
+    </iframe>
+    
 </div>
+  
 </body>
 </html>
