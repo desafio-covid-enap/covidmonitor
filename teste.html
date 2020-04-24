@@ -19,23 +19,6 @@
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-third img{margin-bottom: -6px; cursor: pointer}
 .w3-third img:hover{opacity: 0.6; transition: 0.3s}
-
-.resp-container {
-    position: fixed;
-    overflow: hidden;
-    padding-top: 56.25%;
-}
-
-
-.resp-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
 </style>
 <body class="w3-light-grey">
 
@@ -49,7 +32,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-black w3-xlarge w3-padding-16" style="position:fixed;"> 
+<header class="w3-container w3-top w3-black w3-xlarge w3-padding-16"> 
   <span class="w3-left w3-padding"><b>C O V I D</b> M O N I T O R</span>
   <a href="javascript:void(0)" class="w3-right w3-button w3-black" onclick="w3_open()">☰</a>
 </header>
@@ -57,22 +40,56 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+<!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-third">
+      <img src="/covidmonitor/img/isolamento.png" style="width:100%" onclick= "window.location.href = '/covidmonitor/isolamento.html';" alt="isolamento">
+   </div>
+    
+   <div class="w3-third">
+      <img src="/covidmonitor/img/interesse.png" style="width:100%" onclick="window.location.href = '/covidmonitor/interesse.html';" alt="interesse">
+      </div>
+    
+    <div class="w3-third">
+      <img src="/covidmonitor/img/posicao.png" style="width:100%" onclick="window.location.href = '/covidmonitor/posicao.html';" alt="posicao">
+    </div>
+    
+    <!-- new -->
+    
+    <div class="w3-third">
+      <img src="/covidmonitor/img/isolamento.png" style="width:100%" onclick= "window.location.href = '/covidmonitor/isolamento.html';" alt="isolamento">
+   </div>
+    
+   <div class="w3-third">
+      <img src="/covidmonitor/img/interesse.png" style="width:100%" onclick="window.location.href = '/covidmonitor/interesse.html';" alt="interesse">
+      </div>
+    
+    <div class="w3-third">
+      <img src="/covidmonitor/img/posicao.png" style="width:100%" onclick="window.location.href = '/covidmonitor/posicao.html';" alt="posicao">
+    </div>
+    
+    
     
     
 
-<div class="resp-container">
-<iframe class="resp-iframe" src="https://covid.saude.gov.br" style="position: fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
-    Utilize outro browser.
-    
-    
+    </div>
 
-</iframe>
-    
-      
-</div>
   
   
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  
+
   <footer class="w3-container w3-padding-64 w3-center w3-black w3-xxxlarge">
   <a href="http://bit.ly/covidmonitor_insta" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
   <a href="http://bit.ly/covidmonitor_fb" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&nbsp;&nbsp;
@@ -110,5 +127,4 @@ function onClick(element) {
 
 
 </body>
-
 </html>
