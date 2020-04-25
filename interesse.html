@@ -89,7 +89,7 @@
           <h3><strong>COVID-19</strong></h3>
         </div>
         <div class="col-lg-5 text-right">
-          <h4><b>Últimos 02 dias</b></h4>
+          <h4><b>Últimos 60 dias</b></h4>
         </div>
       </div>
         
@@ -114,7 +114,7 @@
     
     <br>
     <!-- Date range selector -->
-      <div class="row aqs-row">
+      <div class="row aqs-row" style="display:none">
         <div class="col-lg-1 col-lg-offset-2">Editar período:</div>
         <div class="col-lg-7">
           <input class="aqs-date-range-selector">
@@ -146,7 +146,7 @@
         minDate: moment('2015-10-01'),
         maxDate: moment().subtract(1, 'days'),
         timestampFormat: 'YYYYMMDD00',
-        daysAgo: 02
+        daysAgo: 60
       };
       function getLanguageCode () {
         var project = $(config.projectSelector).val();
